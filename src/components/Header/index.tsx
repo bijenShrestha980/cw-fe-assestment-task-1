@@ -1,34 +1,53 @@
-import { Search } from 'lucide-react';
+import { useCallback, useState } from "react";
+import { Search } from "lucide-react";
 
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Input } from '@/components/ui/input';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Input } from "@/components/ui/input";
+import { IMAGES } from "@/constants/images";
+
+const { logo } = IMAGES;
+
+const HeaderSearchBar = () => {
+  const [search, setSearch] = useState("");
+
+  const onSearch = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(event.target.value);
+  }, []);
+
+  return (
+    <div className="relative w-full max-w-xs" aria-label="Search">
+      <span className="absolute left-3 top-1.5 pointer-events-none">
+        <Search className="text-gray-400 text-sm" aria-hidden="true" />
+      </span>
+      <Input
+        type="text"
+        value={search}
+        onChange={onSearch}
+        placeholder="Search..."
+        aria-label="Search words"
+        className="pl-10 bg-gray-800 text-white border-none focus:ring-0 rounded-full placeholder:text-gray-400"
+      />
+    </div>
+  );
+};
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between px-6 py-4 bg-black border-b border-gray-800">
+    <header
+      className="flex items-center justify-between px-6 py-4 bg-black border-b border-gray-800"
+      aria-label="Main header"
+    >
       <div className="flex items-center gap-2">
-        <img src="/task1/logo.png" alt="Logo" className="w-10 h-10" />
-        <div className="text-white font-semibold text-lg">Wortionary</div>
+        <img src={logo} alt="Wortionary Logo" className="w-10 h-10" />
+        <span className="text-white font-semibold text-lg">Wortionary</span>
       </div>
-
       <div className="flex items-center gap-4">
-        <div style={{ position: 'relative' }}>
-          <span>
-            <span>
-              <span className="absolute left-3 top-2.5">
-                <Search className="text-gray-400 text-sm" />
-              </span>
-            </span>
-          </span>
-          <Input
-            type="text"
-            value="search"
-            className="pl-9 bg-gray-800 text-white border-none focus:ring-0 rounded-full"
-          />
-        </div>
-        <Avatar style={{ width: '32px', height: '32px' }}>
-          <AvatarImage src="/avatar.jpg" />
-          <AvatarFallback>U</AvatarFallback>
+        <HeaderSearchBar />
+        <Avatar style={{ width: "32px", height: "32px" }}>
+          <AvatarImage src="/avatar.jpg" alt="User avatar" />
+          <AvatarFallback aria-label="User" className="text-gray-800">
+            U
+          </AvatarFallback>
         </Avatar>
       </div>
     </header>
