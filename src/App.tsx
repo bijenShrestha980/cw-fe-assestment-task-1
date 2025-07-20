@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import { TagList } from "@/components/TagList";
+import TagList from "./components/TagList";
 
 export default function App() {
   const [tags, setTags] = useState([

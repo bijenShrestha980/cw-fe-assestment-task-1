@@ -27,3 +27,8 @@
 1. Updated the `SearchBar` component to handle keydown events for accessibility.
 2. Implemented a callback function to handle search input changes.
 3. Created a separate type `SearchBarProps` to ensure type safety.
+
+### [TagList]
+
+1. Added an optional `ariaLabel` prop to the `TagList` component for better accessibility.
+2. Improved the structure of the component to ensure it is more reusable and maintainable.
