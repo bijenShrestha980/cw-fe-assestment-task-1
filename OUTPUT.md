@@ -16,3 +16,14 @@
 1. Updated the `Header` component to include a search bar with improved accessibility.
 2. Added a logo image with alt text for better accessibility.
 3. Improved the styling of the search input for better user experience.
+
+### [Hero]
+
+1. Refactored the `Hero` component to use a background image from constants.
+2. Added a search bar with a callback function to handle search input.
+
+### [SearchBar]
+
+1. Updated the `SearchBar` component to handle keydown events for accessibility.
+2. Implemented a callback function to handle search input changes.
+3. Created a separate type `SearchBarProps` to ensure type safety.
