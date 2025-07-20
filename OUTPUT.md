@@ -16,6 +16,7 @@
 1. Updated the `Header` component to include a search bar with improved accessibility.
 2. Added a logo image with alt text for better accessibility.
 3. Improved the styling of the search input for better user experience.
+4. Changes in design for Responsive behavior.
 
 ### [Hero]
 

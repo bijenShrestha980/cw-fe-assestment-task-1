@@ -34,16 +34,27 @@ const HeaderSearchBar = () => {
 const Header = () => {
   return (
     <header
-      className="flex items-center justify-between px-6 py-4 bg-black border-b border-gray-800"
+      className="flex flex-col md:flex-row items-start md:items-center justify-between px-4 md:px-6 py-3 md:py-4 bg-black border-b border-gray-800 gap-4 md:gap-0"
       aria-label="Main header"
     >
       <div className="flex items-center gap-2">
-        <img src={logo} alt="Wortionary Logo" className="w-10 h-10" />
-        <span className="text-white font-semibold text-lg">Wortionary</span>
+        <img
+          src={logo}
+          alt="Wortionary Logo"
+          className="w-8 h-8 md:w-10 md:h-10"
+        />
+        <span className="text-white font-semibold text-base md:text-lg">
+          Wortionary
+        </span>
       </div>
-      <div className="flex items-center gap-4">
-        <HeaderSearchBar />
-        <Avatar style={{ width: "32px", height: "32px" }}>
+      <div className="flex items-center gap-3 md:gap-4 w-full md:w-auto">
+        <div className="flex-1 md:flex-none">
+          <HeaderSearchBar />
+        </div>
+        <Avatar
+          style={{ width: "28px", height: "28px" }}
+          className="md:w-8 md:h-8"
+        >
           <AvatarImage src="/avatar.jpg" alt="User avatar" />
           <AvatarFallback aria-label="User" className="text-gray-800">
             U
