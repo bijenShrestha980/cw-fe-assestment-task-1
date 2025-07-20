@@ -6,3 +6,7 @@
 
 1. Simplified the `App` component by code splitting it into smaller components.
 2. Removed unnecessary imports and streamlined the component structure.
+
+### [images.ts]
+
+1. Added constants for images used in the application.
